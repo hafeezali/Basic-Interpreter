@@ -44,10 +44,52 @@ public class BinOpNode extends Node
                     Object value1 = left.eval();
                     Object value2 = right.eval();
                     if((value1 instanceof String) && (value2 instanceof String)){
-                        System.out.println("Error: Invalid operation(Add) for type string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else{
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else{
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        System.out.println("Error: Invalid operation(Add) for type string. Tokens are " + tokenL + " and " + tokenR);
                     }
                     else if((value1 instanceof String) || (value2 instanceof String)){
-                        System.out.println("Error: Cannot add integer and string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else if(left instanceof StringNode){
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        else{
+                            NumberNode l = (NumberNode) left;
+                            tokenL = left.eval().toString();
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else if(right instanceof StringNode){
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        else{
+                            NumberNode r = (NumberNode) right;
+                            tokenR = r.eval().toString();
+                        }
+                        System.out.println("Error: Cannot add integer and string. Tokens are " + tokenL + " and " + tokenR);
                     }
                 }
             break;
@@ -58,11 +100,53 @@ public class BinOpNode extends Node
                     Object value1 = left.eval();
                     Object value2 = right.eval();
                     if((value1 instanceof String) && (value2 instanceof String)){
-                        System.out.println("Error: Invalid operation(Subtract) for type string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else{
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else{
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        System.out.println("Error: Invalid operation(Subtract) for type string. Tokens are " + tokenL + " and " + tokenR);
                     }
                     else if((value1 instanceof String) || (value2 instanceof String)){
-                        System.out.println("Error: Cannot subtract integer and string.");
-                    }                   
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else if(left instanceof StringNode){
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        else{
+                            NumberNode l = (NumberNode) left;
+                            tokenL = left.eval().toString();
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else if(right instanceof StringNode){
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        else{
+                            NumberNode r = (NumberNode) right;
+                            tokenR = r.eval().toString();
+                        }
+                        System.out.println("Error: Cannot subtract integer and string. Tokens are " + tokenL + " and " + tokenR);
+                    }                  
                 }
             break;
             case MULTIPLY:
@@ -72,11 +156,54 @@ public class BinOpNode extends Node
                     Object value1 = left.eval();
                     Object value2 = right.eval();
                     if((value1 instanceof String) && (value2 instanceof String)){
-                        System.out.println("Error: Invalid operation(Multiply) for type string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else{
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else{
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        System.out.println("Error: Invalid operation(Multiply) for type string. Tokens are " + tokenL + " and " + tokenR);
                     }
                     else if((value1 instanceof String) || (value2 instanceof String)){
-                        System.out.println("Error: Cannot multiply integer and string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else if(left instanceof StringNode){
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        else{
+                            NumberNode l = (NumberNode) left;
+                            tokenL = left.eval().toString();
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else if(right instanceof StringNode){
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        else{
+                            NumberNode r = (NumberNode) right;
+                            tokenR = r.eval().toString();
+                        }
+                        System.out.println("Error: Cannot multiply integer and string. Tokens are " + tokenL + " and " + tokenR);
                     }
+
                 }
             break;
             case DIVIDE:
@@ -91,10 +218,52 @@ public class BinOpNode extends Node
                     Object value1 = left.eval();
                     Object value2 = right.eval();
                     if((value1 instanceof String) && (value2 instanceof String)){
-                        System.out.println("Error: Invalid operation(Divide) for type string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else{
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else{
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        System.out.println("Error: Invalid operation(Divide) for type string. Tokens are " + tokenL + " and " + tokenR);
                     }
                     else if((value1 instanceof String) || (value2 instanceof String)){
-                        System.out.println("Error: Cannot divide integer and string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else if(left instanceof StringNode){
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        else{
+                            NumberNode l = (NumberNode) left;
+                            tokenL = left.eval().toString();
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else if(right instanceof StringNode){
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        else{
+                            NumberNode r = (NumberNode) right;
+                            tokenR = r.eval().toString();
+                        }
+                        System.out.println("Error: Cannot divide integer and string. Tokens are " + tokenL + " and " + tokenR);
                     }
                 }
             break;
@@ -105,11 +274,53 @@ public class BinOpNode extends Node
                     Object value1 = left.eval();
                     Object value2 = right.eval();
                     if((value1 instanceof String) && (value2 instanceof String)){
-                        System.out.println("Error: Invalid operation(less than) for type string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else{
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else{
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        System.out.println("Error: Invalid operation(lesser than) for type string. Tokens are " + tokenL + " and " + tokenR);
                     }
                     else if((value1 instanceof String) || (value2 instanceof String)){
-                        System.out.println("Error: Cannot compare(less than) integer and string.");
-                    }                    
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else if(left instanceof StringNode){
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        else{
+                            NumberNode l = (NumberNode) left;
+                            tokenL = left.eval().toString();
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else if(right instanceof StringNode){
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        else{
+                            NumberNode r = (NumberNode) right;
+                            tokenR = r.eval().toString();
+                        }
+                        System.out.println("Error: Cannot compare(lesser than) integer and string. Tokens are " + tokenL + " and " + tokenR);
+                    }                   
                 }
             break;
             case GREATER:
@@ -119,10 +330,52 @@ public class BinOpNode extends Node
                     Object value1 = left.eval();
                     Object value2 = right.eval();
                     if((value1 instanceof String) && (value2 instanceof String)){
-                        System.out.println("Error: Invalid operation(greater than) for type string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else{
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else{
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        System.out.println("Error: Invalid operation(greater than) for type string. Tokens are " + tokenL + " and " + tokenR);
                     }
                     else if((value1 instanceof String) || (value2 instanceof String)){
-                        System.out.println("Error: Cannot compare(greater than) integer and string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else if(left instanceof StringNode){
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        else{
+                            NumberNode l = (NumberNode) left;
+                            tokenL = left.eval().toString();
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else if(right instanceof StringNode){
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        else{
+                            NumberNode r = (NumberNode) right;
+                            tokenR = r.eval().toString();
+                        }
+                        System.out.println("Error: Cannot compare(greater than) integer and string. Tokens are " + tokenL + " and " + tokenR);
                     } 
                 }
             break;
@@ -139,11 +392,53 @@ public class BinOpNode extends Node
                     Object value1 = left.eval();
                     Object value2 = right.eval();
                     if((value1 instanceof String) && (value2 instanceof String)){
-                        System.out.println("Error: Invalid operation(lesser than equal to) for type string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else{
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else{
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        System.out.println("Error: Invalid operation(lesser than equal to) for type string. Tokens are " + tokenL + " and " + tokenR);
                     }
                     else if((value1 instanceof String) || (value2 instanceof String)){
-                        System.out.println("Error: Cannot compare(lesser than equal to) integer and string.");
-                    }
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else if(left instanceof StringNode){
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        else{
+                            NumberNode l = (NumberNode) left;
+                            tokenL = left.eval().toString();
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else if(right instanceof StringNode){
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        else{
+                            NumberNode r = (NumberNode) right;
+                            tokenR = r.eval().toString();
+                        }
+                        System.out.println("Error: Cannot compare(lesser than equal to) integer and string. Tokens are " + tokenL + " and " + tokenR);
+                    } 
                 }
             break;
             case GREATEREQUAL:
@@ -153,11 +448,53 @@ public class BinOpNode extends Node
                     Object value1 = left.eval();
                     Object value2 = right.eval();
                     if((value1 instanceof String) && (value2 instanceof String)){
-                        System.out.println("Error: Invalid operation(greater than equal to) for type string.");
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else{
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else{
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        System.out.println("Error: Invalid operation(greater than equal to) for type string. Tokens are " + tokenL + " and " + tokenR);
                     }
                     else if((value1 instanceof String) || (value2 instanceof String)){
-                        System.out.println("Error: Cannot compare(greater than equal to) integer and string.");
-                    } 
+                        String tokenL = null, tokenR = null;
+                        if(left instanceof VariableNode){
+                            VariableNode l = (VariableNode) left;
+                            tokenL = l.varName;
+                        }
+                        else if(left instanceof StringNode){
+                            StringNode l = (StringNode) left;
+                            tokenL = l.text;
+                        }
+                        else{
+                            NumberNode l = (NumberNode) left;
+                            tokenL = left.eval().toString();
+                        }
+                        if(right instanceof VariableNode){
+                            VariableNode r = (VariableNode) right;
+                            tokenR = r.varName;
+                        }
+                        else if(right instanceof StringNode){
+                            StringNode r = (StringNode) right;
+                            tokenR = r.text;
+                        }
+                        else{
+                            NumberNode r = (NumberNode) right;
+                            tokenR = r.eval().toString();
+                        }
+                        System.out.println("Error: Cannot compare(greater than equal to) integer and string. Tokens are " + tokenL + " and " + tokenR);
+                    }
                 }
             break;                                                                                     
         }

@@ -1,15 +1,24 @@
 script
 	x = 3 < "hi"
-	if(3<"hi")
+	a = 3
+	b = "hi"
+	if(a>=b)
+		println("hi")
+	end
+	if(3>=b)
+		println("dead")
+	end
+	if(a<=b)
 		println("Hello")
 	end
-	if(3<2)
+	if(3<=2)
 		println("3<2")
 	end
 	else
 		println("3>2")
 	end
 	println(x)
+	x = "hello" + "hi"
 	y = 4 - 3
 	println(y)
 	z = "hello" - 5
@@ -55,4 +64,14 @@ script
 		print("hello")
 		x=x+1
 	end
+	a = "hello" 
+	c = "bye"
+	b = a + c
+	x=1
+	y="Hello"
+	a = x + y
+	a = 1 - "hello"
+	a = 1 * "hello"
+	a = x * "hello"
+	a = x * y
 end
