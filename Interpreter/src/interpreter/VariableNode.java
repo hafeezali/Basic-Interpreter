@@ -19,7 +19,6 @@ public class VariableNode extends Node
         if (varValue == null)
         {
             System.out.println("Undefined Variable...Var Name: " + varName);
-            System.exit(1);
         }        
         return varValue;
     }

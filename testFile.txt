@@ -1,0 +1,58 @@
+script
+	x = 3 < "hi"
+	if(3<"hi")
+		println("Hello")
+	end
+	if(3<2)
+		println("3<2")
+	end
+	else
+		println("3>2")
+	end
+	println(x)
+	y = 4 - 3
+	println(y)
+	z = "hello" - 5
+	x = 4 * 3
+	println(x)
+	y = 4 * "yo"
+	z = 4/2
+	println(z)
+	z = "hi" / 3
+	if(4>2)
+		println("Mofo")
+	end
+	if(4>"Hello")
+		println("Youza")
+	end
+	if(x == 12)
+		println("x is 12")
+	end
+	if(x == "Hello")
+		println("x is hello")
+	end
+	else
+		println("x is not hello")
+	end
+	if(x>=0)
+		println("x is greater than 0")
+	end
+	if(x>="Hi")
+		println("Revanth & Akshay are fools")
+	end
+	if(x<=100)
+		println("x is lesser than equal to 100")
+	end
+	if(x<="Die")
+		println("Dead")
+	end
+	x=1
+	while(x<10)
+		print(x)
+		x=x+1
+	end
+	while(x<"hello")
+		print("hello")
+		x=x+1
+	end
+end

@@ -48,12 +48,12 @@ public class FunctionCallNode extends Node
                     {
                         String name = function.getParameters().get(index).getName();
                         Object value = actualParameters.get(index).getValue();
-                                                                      
+
                         boundParameters.add(new BoundParameter(name, value));
                     }
                 }
             }
-        }                
+        }
         return parser.ExecuteFunction(function, boundParameters);
     }
 }

@@ -14,7 +14,9 @@ public class PrintCommand extends Node
     public Object eval()
     {
         Object writee = parser.getVariable("writee");
-        System.out.print(writee);
+        if(writee != null){
+            System.out.print(writee);
+        }
 
         return writee;
     }        

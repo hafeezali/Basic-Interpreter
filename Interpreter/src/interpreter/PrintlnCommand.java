@@ -14,8 +14,10 @@ public class PrintlnCommand extends Node
     public Object eval()
     {
         Object writee = parser.getVariable("writee");
-        System.out.println(writee);
-
+        if(writee != null){
+            System.out.println(writee);
+        }
+        
         return writee;
     }        
 }
